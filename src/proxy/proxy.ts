@@ -7,6 +7,8 @@ export const setupProxyWithLimits = (app: any, requestCounts: IRequestCounts) =>
         const proxyOptions = {
             target: target,
             changeOrigin: true,
+            cookieDomainRewrite: "localhost:5173",
+            secure: false,
             pathRewrite: {
                 [`^${route}`]: "",
             }
